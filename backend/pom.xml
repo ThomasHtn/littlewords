@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.1.1</version>
+    <version>4.1.2</version>
     <relativePath/>
   </parent>
 
@@ -22,7 +22,7 @@
   <properties>
     <java.version>25</java.version>
 
-    <springdoc.version>3.1.1</springdoc.version>
+    <springdoc.version>3.2.0</springdoc.version>
     <bouncycastle.version>1.86</bouncycastle.version>
     <testcontainers.version>2.0.5</testcontainers.version>
     <archunit.version>1.5.1</archunit.version>
@@ -37,7 +37,7 @@
     <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
     <spotbugs-maven-plugin.version>4.10.5.0</spotbugs-maven-plugin.version>
     <spotbugs-annotations.version>4.10.5</spotbugs-annotations.version>
-    <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.16</jacoco-maven-plugin.version>
 
     <!-- Coverage floor enforced by jacoco:check; a ratchet, never lowered to make a build pass. -->
     <jacoco.line.coverage.minimum>0.90</jacoco.line.coverage.minimum>
