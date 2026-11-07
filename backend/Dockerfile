@@ -5,7 +5,7 @@
 # ---- Build stage ------------------------------------------------------------
 # Builds the executable jar. Quality gates (Checkstyle, SpotBugs, tests, JaCoCo) already run in CI
 # via `./mvnw verify` before an image is ever built here, so this stage only packages the artifact.
-FROM eclipse-temurin:25.0.4.1_1-jdk-noble@sha256:ba0f0e1a33864105e1d454e88105c617ab40f71062db1f306bf58be32a3f8e5e AS build
+FROM eclipse-temurin:25.0.5_8-jdk-noble@sha256:95e350ad1eb738f943e141640f7e3d797e483359a3b33c3864255bfd1ad71f8a AS build
 WORKDIR /workspace
 
 # Copied and resolved before the source tree, so this layer is only invalidated when a dependency
@@ -23,7 +23,7 @@ RUN ./mvnw --batch-mode --no-transfer-progress -DskipTests clean package \
   && java -Djarmode=tools -jar littlewords.jar extract --layers --destination extracted
 
 # ---- Runtime stage ------------------------------------------------------------
-FROM eclipse-temurin:25.0.4.1_1-jre-noble@sha256:3f2223fe04b750aa5a8179e29b5c9a1ddf7665fc9bb08bfe11ad01d143bc13a5 AS runtime
+FROM eclipse-temurin:25.0.5_8-jre-noble@sha256:a98128a57de944a72bd31fbc79b898edd5a5864d3652071d5bbd2160ab7d7dce AS runtime
 WORKDIR /app
 
 # Unprivileged user with a fixed numeric id, so a runtime can check it is not root without a passwd lookup.
